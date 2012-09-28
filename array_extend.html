@@ -1,0 +1,45 @@
+<HTML>
+ 
+<HEAD> 
+ 
+<TITLE>Array Extend</TITLE> 
+ 
+<SCRIPT>
+/*** 
+	Adds all numbers in a given array
+	Returns total
+**/ 
+Array.prototype.addAll=function() {
+	var tmp = 0;
+	for (var i = 0; i < this.length; i++)
+		tmp += this[i];
+	return tmp;
+};
+
+/*** 
+	Converts array to CSV format
+	Returns CSV string
+**/
+Array.prototype.csv=function() {
+	var tmp = "";
+	for (var i = 0; i < this.length; i++)
+	{
+		tmp += this[i];
+		if (i < this.length-1)
+		tmp += ",";
+	}
+	return tmp;
+};
+</SCRIPT>
+
+</HEAD>
+<BODY>
+	<SCRIPT>
+	document.write("[1,7,10,5,1]");
+	document.write("<br>");
+	document.write("[1,7,10,5,1].addAll() = " + [1,7,10,5,1].addAll() + "");
+	document.write("<br>");
+	document.write("[1,7,10,5,1].csv() = " + [1,7,10,5,1].csv() + "");
+	</SCRIPT>
+</BODY>
+</HTML>
